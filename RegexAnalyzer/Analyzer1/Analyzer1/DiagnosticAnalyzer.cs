@@ -10,10 +10,11 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 namespace Analyzer1
 {
-    //Test test hallo?
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class Analyzer1Analyzer : DiagnosticAnalyzer 
     {
+        private string[] todoList = { "todo", "Todo", "TODO" };
+
         public const string DiagnosticId = "TriviaAnalyzer";
         internal static readonly LocalizableString Title = "TriviaAnalyzer Title";
         internal static readonly LocalizableString MessageFormat = "TriviaAnalyzer '{0}'";
@@ -27,7 +28,7 @@ namespace Analyzer1
         {
             context.RegisterSyntaxTreeAction(this.HandleSyntaxTree);
         }
-
+        
         private void HandleSyntaxTree(SyntaxTreeAnalysisContext context)
         {
             SyntaxNode root = context.Tree.GetCompilationUnitRoot(context.CancellationToken);
@@ -50,12 +51,15 @@ namespace Analyzer1
                         commentText = nodeText.Substring(2, nodeText.Length - 4);
                         break;
                 }
-
-                if(commentText.Contains("Todo"))
+                
+                //if(commentText.Contains("Todo"))
+                if(MyContains.MyOwnContains(commentText, todoList))
                 {
                     var diagnostic = Diagnostic.Create(Rule, node.GetLocation());
                     context.ReportDiagnostic(diagnostic);
                 }
+
+
 
                 //if (!string.IsNullOrEmpty(commentText))
                 //{
