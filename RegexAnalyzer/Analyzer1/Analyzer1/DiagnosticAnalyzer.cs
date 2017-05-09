@@ -48,21 +48,34 @@ namespace Analyzer1
         private void AnalyzeNode(SyntaxNodeAnalysisContext context)
         {
             var invocationExpr = (InvocationExpressionSyntax)context.Node;
+
             var memberAccessExpr = invocationExpr.Expression as MemberAccessExpressionSyntax;
+
             if (memberAccessExpr?.Name.ToString() != "Match") return;
+
             var memberSymbol = context.SemanticModel.
               GetSymbolInfo(memberAccessExpr).Symbol as IMethodSymbol;
+
             if (!memberSymbol?.ToString().StartsWith(
               "System.Text.RegularExpressions.Regex.Match") ?? true) return;
+
             var argumentList = invocationExpr.ArgumentList as ArgumentListSyntax;
+
             if ((argumentList?.Arguments.Count ?? 0) < 2) return;
+
             var regexLiteral =
               argumentList.Arguments[1].Expression as LiteralExpressionSyntax;
+
             if (regexLiteral == null) return;
+
             var regexOpt = context.SemanticModel.GetConstantValue(regexLiteral);
+
             if (!regexOpt.HasValue) return;
+
             var regex = regexOpt.Value as string;
+
             if (regex == null) return;
+
             try
             {
                 System.Text.RegularExpressions.Regex.Match("", regex);

@@ -8,3 +8,13 @@ C:\Users\just_\documents\visual studio 2015\Projects\RegexAnalyzer\Analyzer1\Ana
 C:\Users\just_\documents\visual studio 2015\Projects\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.csproj.GenerateResource.Cache
 C:\Users\just_\documents\visual studio 2015\Projects\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.dll
 C:\Users\just_\documents\visual studio 2015\Projects\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.pdb
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\Diagnostic.nuspec
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\tools\install.ps1
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\tools\uninstall.ps1
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\Analyzer1.dll
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\Analyzer1.pdb
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.csprojResolveAssemblyReference.cache
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.Resources.resources
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.csproj.GenerateResource.Cache
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.dll
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.pdb
