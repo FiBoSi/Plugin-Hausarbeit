@@ -13,6 +13,7 @@ namespace Analyzer1
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class Analyzer1Analyzer : DiagnosticAnalyzer 
     {
+        // Sammlung von zu erkennenden todo-Schreibweisen
         private string[] todoList = { "todo", "Todo", "TODO" };
 
         public const string DiagnosticId = "TriviaAnalyzer";
@@ -24,6 +25,7 @@ namespace Analyzer1
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 
+        // Zugriff auf Syntax-Baum
         public override void Initialize(AnalysisContext context)
         {
             context.RegisterSyntaxTreeAction(this.HandleSyntaxTree);
@@ -32,41 +34,36 @@ namespace Analyzer1
         private void HandleSyntaxTree(SyntaxTreeAnalysisContext context)
         {
             SyntaxNode root = context.Tree.GetCompilationUnitRoot(context.CancellationToken);
+            // Sammeln aller Single- und MultiLineCommentTrivia
             var commentNodes = from node in root.DescendantTrivia() where node.IsKind(SyntaxKind.MultiLineCommentTrivia) || node.IsKind(SyntaxKind.SingleLineCommentTrivia) select node;
 
             if (!commentNodes.Any())
             {
                 return;
             }
+
             foreach (var node in commentNodes)
             {
                 string commentText = "";
+                // Ablegen des node-Inhalts in commentText
                 switch (node.Kind())
                 {
                     case SyntaxKind.SingleLineCommentTrivia:
                         commentText = node.ToString().TrimStart('/');
                         break;
                     case SyntaxKind.MultiLineCommentTrivia:
-                        var nodeText = node.ToString();
-                        commentText = nodeText.Substring(2, nodeText.Length - 4);
+                        var nodeText = node.ToString().TrimStart('/');
+                        commentText = nodeText.Substring(0, nodeText.Length - 4);
                         break;
                 }
                 
-                //if(commentText.Contains("Todo"))
+                // Prüfen ob commentText eine bekannte todo-Schreibweise enthält
                 if(MyContains.MyOwnContains(commentText, todoList))
                 {
+                    // erzeugen einer Diagnostic an der Location des nodes
                     var diagnostic = Diagnostic.Create(Rule, node.GetLocation());
                     context.ReportDiagnostic(diagnostic);
                 }
-
-
-
-                //if (!string.IsNullOrEmpty(commentText))
-                //{
-
-                //    var diagnostic = Diagnostic.Create(Rule, node.GetLocation());
-                //    context.ReportDiagnostic(diagnostic);
-                //}
             }
         }
     }
