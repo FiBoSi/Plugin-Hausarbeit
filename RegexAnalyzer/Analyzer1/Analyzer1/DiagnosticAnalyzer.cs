@@ -18,7 +18,7 @@ namespace Analyzer1
 
         public const string DiagnosticId = "TriviaAnalyzer";
         internal static readonly LocalizableString Title = "TriviaAnalyzer Title";
-        internal static readonly LocalizableString MessageFormat = "TriviaAnalyzer '{0}'";
+        internal static readonly LocalizableString MessageFormat = "TriviaAnalyzer";
         internal const string Category = "TriviaAnalyzer Category";
 
         internal static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, true);
@@ -34,6 +34,7 @@ namespace Analyzer1
         private void HandleSyntaxTree(SyntaxTreeAnalysisContext context)
         {
             SyntaxNode root = context.Tree.GetCompilationUnitRoot(context.CancellationToken);
+
             // Sammeln aller Single- und MultiLineCommentTrivia
             var commentNodes = from node in root.DescendantTrivia() where node.IsKind(SyntaxKind.MultiLineCommentTrivia) || node.IsKind(SyntaxKind.SingleLineCommentTrivia) select node;
 

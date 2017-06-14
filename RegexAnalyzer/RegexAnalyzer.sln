@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer1.Test", "Analyzer1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer1.Vsix", "Analyzer1\Analyzer1.Vsix\Analyzer1.Vsix.csproj", "{9D10760C-86EB-4C60-A12C-8B912084B877}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolWindow", "ToolWindow\ToolWindow.csproj", "{C6E46CEE-0B5F-4DE2-B2CE-B7A03B45DD28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9D10760C-86EB-4C60-A12C-8B912084B877}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D10760C-86EB-4C60-A12C-8B912084B877}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D10760C-86EB-4C60-A12C-8B912084B877}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E46CEE-0B5F-4DE2-B2CE-B7A03B45DD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E46CEE-0B5F-4DE2-B2CE-B7A03B45DD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E46CEE-0B5F-4DE2-B2CE-B7A03B45DD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E46CEE-0B5F-4DE2-B2CE-B7A03B45DD28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
