@@ -18,3 +18,5 @@ C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer
 C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.csproj.GenerateResource.Cache
 C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.dll
 C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\obj\Debug\Analyzer1.pdb
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\ClassLibrary1.dll
+C:\Users\just_\Desktop\Plugin\Plugin-Hausarbeit\RegexAnalyzer\Analyzer1\Analyzer1\bin\Debug\ClassLibrary1.pdb

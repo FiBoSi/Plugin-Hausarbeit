@@ -9,18 +9,33 @@ namespace Analyzer1.Vsix
     using System.Diagnostics.CodeAnalysis;
     using System.Windows;
     using System.Windows.Controls;
+    using Analyzer1;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Interaction logic for ToolWindow1Control.
     /// </summary>
     public partial class ToolWindow1Control : UserControl
     {
+
+        private List<TodoItem> items = new List<TodoItem>();
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolWindow1Control"/> class.
         /// </summary>
         public ToolWindow1Control()
         {
             this.InitializeComponent();
+            
+        }
+
+        private List<string> todosToList = new List<string>();
+
+        public void FillTodoList()
+        {
+            foreach (var item in ClassLibrary1.Class1.todos)
+            {
+                items.Add(new TodoItem() { text = item });
+            }
         }
 
         /// <summary>
@@ -32,9 +47,17 @@ namespace Analyzer1.Vsix
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(
-                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
-                "ToolWindow1");
+            //MessageBox.Show(
+            //    string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
+            //    "ToolWindow1");
+            FillTodoList();
+
+            listBox.ItemsSource = items;
         }
+    }
+
+    public class TodoItem
+    {
+        public string text { get; set; }
     }
 }

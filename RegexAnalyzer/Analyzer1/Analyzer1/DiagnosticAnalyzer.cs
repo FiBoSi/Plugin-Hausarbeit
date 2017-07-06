@@ -15,6 +15,8 @@ namespace Analyzer1
     {
         // Sammlung von zu erkennenden todo-Schreibweisen
         private string[] todoList = { "todo", "Todo", "TODO" };
+        // Sammlung der gefundenen Todos
+        public string[] todoFound;
 
         public const string DiagnosticId = "TriviaAnalyzer";
         internal static readonly LocalizableString Title = "TriviaAnalyzer Title";
@@ -29,6 +31,7 @@ namespace Analyzer1
         public override void Initialize(AnalysisContext context)
         {
             context.RegisterSyntaxTreeAction(this.HandleSyntaxTree);
+            
         }
         
         private void HandleSyntaxTree(SyntaxTreeAnalysisContext context)
@@ -43,6 +46,7 @@ namespace Analyzer1
                 return;
             }
 
+            //int counter = 0;
             foreach (var node in commentNodes)
             {
                 string commentText = "";
@@ -64,6 +68,9 @@ namespace Analyzer1
                     // erzeugen einer Diagnostic an der Location des nodes
                     var diagnostic = Diagnostic.Create(Rule, node.GetLocation());
                     context.ReportDiagnostic(diagnostic);
+
+                    ClassLibrary1.Class1.todos.Add(commentText);
+                    //counter++;
                 }
             }
         }
