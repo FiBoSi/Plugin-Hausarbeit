@@ -46,7 +46,7 @@ namespace Analyzer1
             foreach (var node in commentNodes)
             {
                 string commentText = "";
-                // Ablegen des node-Inhalts in commentText
+                // Ablegen des node-Inhalts in commentText als String
                 switch (node.Kind())
                 {
                     case SyntaxKind.SingleLineCommentTrivia:

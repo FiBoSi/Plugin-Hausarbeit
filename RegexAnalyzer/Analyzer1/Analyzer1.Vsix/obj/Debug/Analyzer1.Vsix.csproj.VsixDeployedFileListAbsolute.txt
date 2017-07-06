@@ -4,3 +4,6 @@ C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\
 C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\tools\install.ps1
 C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\tools\uninstall.ps1
 C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\Analyzer1.pdb
+C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\Analyzer1.Vsix.dll
+C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\Analyzer1.Vsix.pdb
+C:\Users\just_\AppData\Local\Microsoft\VisualStudio\14.0Roslyn\Extensions\just_\Analyzer1\1.0\\Analyzer1.Vsix.pkgdef
