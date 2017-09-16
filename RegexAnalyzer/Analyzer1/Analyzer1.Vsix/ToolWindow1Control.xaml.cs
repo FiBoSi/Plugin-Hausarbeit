@@ -11,9 +11,6 @@ namespace Analyzer1.Vsix
     using System.Windows.Controls;
     using Analyzer1;
     using System.Collections.Generic;
-    using ClassLibrary1;
-    using Microsoft.CodeAnalysis.Text;
-
 
     /// <summary>
     /// Interaction logic for ToolWindow1Control.
@@ -22,13 +19,23 @@ namespace Analyzer1.Vsix
     {
 
         private List<TodoItem> items = new List<TodoItem>();
-
         /// <summary>
         /// Initializes a new instance of the <see cref="ToolWindow1Control"/> class.
         /// </summary>
         public ToolWindow1Control()
         {
             this.InitializeComponent();
+            
+        }
+
+        private List<string> todosToList = new List<string>();
+
+        public void FillTodoList()
+        {
+            foreach (var item in ClassLibrary1.Class1.todos)
+            {
+                items.Add(new TodoItem() { text = item });
+            }
         }
 
         /// <summary>
@@ -43,26 +50,14 @@ namespace Analyzer1.Vsix
             //MessageBox.Show(
             //    string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
             //    "ToolWindow1");
+            FillTodoList();
 
-
-            //FillTodoList();
-
-            // Listbox mit gefundenen Todos füllen
-            listBox.ItemsSource = Class1.foundTodos;
-
-            //Analyzer1Analyzer.DoShit(items[0]);
+            listBox.ItemsSource = items;
         }
+    }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            items[1].todoLocation.SourceTree.WithChangedText(items[1].todoLocation.SourceTree.GetText().WithChanges(new Microsoft.CodeAnalysis.Text.TextChange(items[1].todoLocation.SourceSpan, items[1].text + " FOUND!")));
-
-        }
-
-        // gefundene Todos in klasseneigener liste speichern
-        public void FillTodoList()
-        {
-            items = Class1.foundTodos;
-        }
+    public class TodoItem
+    {
+        public string text { get; set; }
     }
 }
