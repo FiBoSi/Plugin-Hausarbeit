@@ -14,4 +14,5 @@ namespace Analyzer1
             return p.Any(s => str.Contains(s));
         }
     }
+    // sollte prüfen ob die strings damit beginnen
 }

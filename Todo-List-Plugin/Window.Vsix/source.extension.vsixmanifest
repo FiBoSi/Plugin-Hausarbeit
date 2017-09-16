@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Todo_List_Plugin.Finn Sievers.363e6400-2a17-4f7b-ac92-7e96515aee21" Version="1.0" Language="en-US" Publisher="Finn Sievers" />
-    <DisplayName>Todo_List_Plugin</DisplayName>
+    <Identity Id="Window.Vsix.Finn Sievers.00b7d46f-4637-434f-a2cb-dba7c22f68a9" Version="1.0" Language="en-US" Publisher="Finn Sievers" />
+    <DisplayName>Window.Vsix</DisplayName>
     <Description>Empty VSIX Project.</Description>
   </Metadata>
   <Installation>
