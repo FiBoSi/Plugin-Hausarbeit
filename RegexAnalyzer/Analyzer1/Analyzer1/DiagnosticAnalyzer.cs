@@ -7,6 +7,9 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
+using ClassLibrary1;
+using System.Windows.Documents;
+
 
 namespace Analyzer1
 {
@@ -15,15 +18,13 @@ namespace Analyzer1
     {
         // Sammlung von zu erkennenden todo-Schreibweisen
         private string[] todoList = { "todo", "Todo", "TODO" };
-        // Sammlung der gefundenen Todos
-        public string[] todoFound;
 
         public const string DiagnosticId = "TriviaAnalyzer";
         internal static readonly LocalizableString Title = "TriviaAnalyzer Title";
         internal static readonly LocalizableString MessageFormat = "TriviaAnalyzer";
         internal const string Category = "TriviaAnalyzer Category";
 
-        internal static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, true);
+        internal static DiagnosticDescriptor Rule = new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Info, true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(Rule); } }
 
@@ -31,11 +32,12 @@ namespace Analyzer1
         public override void Initialize(AnalysisContext context)
         {
             context.RegisterSyntaxTreeAction(this.HandleSyntaxTree);
-            
         }
         
         private void HandleSyntaxTree(SyntaxTreeAnalysisContext context)
         {
+            //contextStored = context;
+
             SyntaxNode root = context.Tree.GetCompilationUnitRoot(context.CancellationToken);
 
             // Sammeln aller Single- und MultiLineCommentTrivia
@@ -46,7 +48,7 @@ namespace Analyzer1
                 return;
             }
 
-            //int counter = 0;
+            int counter = 0;
             foreach (var node in commentNodes)
             {
                 string commentText = "";
@@ -68,11 +70,15 @@ namespace Analyzer1
                     // erzeugen einer Diagnostic an der Location des nodes
                     var diagnostic = Diagnostic.Create(Rule, node.GetLocation());
                     context.ReportDiagnostic(diagnostic);
-
-                    ClassLibrary1.Class1.todos.Add(commentText);
+                    
+                    // speichert gefundene Todos in TodoItem-Liste von Class1
+                    // dort können sie vom ToolWindow gefunden werden
+                    //Class1.foundTodos.Add(new TodoItem() { text = commentText , todoItemID = counter , todoLocation = node.GetLocation() });
                     //counter++;
                 }
             }
         }
     }
 }
+
+
