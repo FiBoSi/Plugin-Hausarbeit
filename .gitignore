@@ -186,6 +186,7 @@ ClientBin/
 *.dbmdl
 *.dbproj.schemaview
 *.pfx
+!MyRuntimeValuesKey.pfx
 *.publishsettings
 node_modules/
 orleans.codegen.cs
