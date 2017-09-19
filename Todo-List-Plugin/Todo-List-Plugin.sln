@@ -3,19 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo_List_Plugin", "Todo-List-Plugin\Todo_List_Plugin\Todo_List_Plugin.csproj", "{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo_List_Plugin.Test", "Todo-List-Plugin\Todo_List_Plugin.Test\Todo_List_Plugin.Test.csproj", "{8F7DCB80-89D7-4B61-901D-D55B6733FFF9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo_List_Plugin.Vsix", "Todo-List-Plugin\Todo_List_Plugin.Vsix\Todo_List_Plugin.Vsix.csproj", "{12A2354B-5CAF-46E6-9283-518BE0B25C30}"
-	ProjectSection(ProjectDependencies) = postProject
-		{6D2D16E5-288E-40E9-9458-45526BFD1437} = {6D2D16E5-288E-40E9-9458-45526BFD1437}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo_List_ToolWindow.Vsix", "Todo_List_ToolWindow.Vsix\Todo_List_ToolWindow.Vsix.csproj", "{6D2D16E5-288E-40E9-9458-45526BFD1437}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E} = {DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo-List-Plugin", "Todo-List-Plugin\Todo-List-Plugin.csproj", "{1458441E-9EC6-4A53-8047-3DB1A18B7809}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,22 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF0C0CF7-59B4-4A76-9861-1FF907C9C37E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F7DCB80-89D7-4B61-901D-D55B6733FFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F7DCB80-89D7-4B61-901D-D55B6733FFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F7DCB80-89D7-4B61-901D-D55B6733FFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F7DCB80-89D7-4B61-901D-D55B6733FFF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12A2354B-5CAF-46E6-9283-518BE0B25C30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12A2354B-5CAF-46E6-9283-518BE0B25C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12A2354B-5CAF-46E6-9283-518BE0B25C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12A2354B-5CAF-46E6-9283-518BE0B25C30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D2D16E5-288E-40E9-9458-45526BFD1437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D2D16E5-288E-40E9-9458-45526BFD1437}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D2D16E5-288E-40E9-9458-45526BFD1437}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D2D16E5-288E-40E9-9458-45526BFD1437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1458441E-9EC6-4A53-8047-3DB1A18B7809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1458441E-9EC6-4A53-8047-3DB1A18B7809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1458441E-9EC6-4A53-8047-3DB1A18B7809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1458441E-9EC6-4A53-8047-3DB1A18B7809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
